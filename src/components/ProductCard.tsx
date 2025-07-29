@@ -88,8 +88,8 @@ export function ProductCard({ product }: ProductCardProps) {
           <Image
             src={product.image}
             alt={product.name}
-            width={400}
-            height={400}
+            width={600}
+            height={600}
             className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
             data-ai-hint={product.data_ai_hint}
           />

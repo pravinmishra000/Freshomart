@@ -22,9 +22,10 @@ export default function Home() {
   const discountedProducts = products.filter(p => p.originalPrice && p.originalPrice > p.price);
 
   const banners = [
-    { src: 'https://placehold.co/1200x400', alt: 'Fresh Vegetables Banner', data_ai_hint: 'vegetables groceries' },
-    { src: 'https://placehold.co/1200x400', alt: 'Daily Essentials Banner', data_ai_hint: 'dairy products' },
-    { src: 'https://placehold.co/1200x400', alt: 'Organic Fruits Banner', data_ai_hint: 'fresh fruit' },
+    { src: 'https://placehold.co/1200x400', alt: 'Organic Fruits Banner', data_ai_hint: 'organic fruits', tagline: '100% Organic, Fresh from Farms.' },
+    { src: 'https://placehold.co/1200x400', alt: 'Fresh Vegetables Banner', data_ai_hint: 'fresh vegetables', tagline: 'Picked Fresh. Delivered Fast.' },
+    { src: 'https://placehold.co/1200x400', alt: 'Dairy Essentials Banner', data_ai_hint: 'dairy products', tagline: 'Pure. Chilled. Wholesome.' },
+    { src: 'https://placehold.co/1200x400', alt: 'Daily Grocery Banner', data_ai_hint: 'grocery staples', tagline: 'Daily Needs, Daily Delivered.' },
   ];
 
   return (
@@ -39,7 +40,7 @@ export default function Home() {
           <CarouselContent>
             {banners.map((banner, index) => (
               <CarouselItem key={index}>
-                <Card className="overflow-hidden">
+                <Card className="overflow-hidden relative">
                   <CardContent className="p-0">
                     <Image
                       src={banner.src}
@@ -49,6 +50,9 @@ export default function Home() {
                       className="w-full h-auto object-cover"
                       data-ai-hint={banner.data_ai_hint}
                     />
+                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-4">
+                        <h2 className="text-4xl md:text-5xl font-extrabold text-white text-center drop-shadow-lg">{banner.tagline}</h2>
+                    </div>
                   </CardContent>
                 </Card>
               </CarouselItem>
