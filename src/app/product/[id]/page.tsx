@@ -56,7 +56,7 @@ export default function ProductDetailPage() {
             <span className="text-muted-foreground">({product.rating.toFixed(1)})</span>
           </div>
           <p className="text-lg text-muted-foreground">{product.description}</p>
-          <p className="text-4xl font-bold text-primary">${product.price.toFixed(2)}</p>
+          <p className="text-4xl font-bold text-primary">₹{product.price.toFixed(2)}</p>
           <Separator />
           <div className="flex items-center space-x-4">
             <label className="font-medium">Quantity:</label>

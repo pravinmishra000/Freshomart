@@ -76,11 +76,11 @@ export default function CheckoutPage() {
                                     <Image src={item.image} alt={item.name} width={64} height={64} className="rounded-md object-cover" data-ai-hint={item.data_ai_hint} />
                                     <div>
                                         <p className="font-semibold">{item.name}</p>
-                                        <p className="text-sm text-muted-foreground">${item.price.toFixed(2)} x {item.quantity}</p>
+                                        <p className="text-sm text-muted-foreground">₹{item.price.toFixed(2)} x {item.quantity}</p>
                                     </div>
                                 </div>
                                 <div className='flex items-center gap-2'>
-                                    <p className="font-semibold">${(item.price * item.quantity).toFixed(2)}</p>
+                                    <p className="font-semibold">₹{(item.price * item.quantity).toFixed(2)}</p>
                                     <Button variant="ghost" size="icon" className="h-8 w-8 text-destructive" onClick={() => removeFromCart(item.id)}>
                                         <Trash2 className="h-4 w-4"/>
                                     </Button>
@@ -90,7 +90,7 @@ export default function CheckoutPage() {
                         <Separator />
                         <div className="flex justify-between font-bold text-lg">
                             <span>Total</span>
-                            <span>${cartTotal.toFixed(2)}</span>
+                            <span>₹{cartTotal.toFixed(2)}</span>
                         </div>
                     </CardContent>
                 </Card>

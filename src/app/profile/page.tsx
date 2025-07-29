@@ -82,7 +82,7 @@ export default function ProfilePage() {
                                 <p className="text-sm font-medium text-primary">{order.status}</p>
                             </div>
                             <div className="text-right">
-                                <p className="font-semibold">${order.total.toFixed(2)}</p>
+                                <p className="font-semibold">₹{order.total.toFixed(2)}</p>
                                 {index === 0 && order.status !== 'Delivered' && (
                                     <Link href="/tracking">
                                         <Button variant="link" className="p-0 h-auto">Track Order</Button>

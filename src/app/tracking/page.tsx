@@ -83,7 +83,7 @@ export default function TrackingPage() {
                                 <span className="text-muted-foreground text-sm"> (x{item.quantity})</span>
                             </div>
                         </div>
-                        <span>${(item.price * item.quantity).toFixed(2)}</span>
+                        <span>₹{(item.price * item.quantity).toFixed(2)}</span>
                     </div>
                 ))}
             </div>
@@ -96,7 +96,7 @@ export default function TrackingPage() {
         </CardContent>
         <CardFooter className="bg-muted/50 p-6 flex justify-between items-center">
           <span className="font-bold text-lg">Total Amount</span>
-          <span className="font-bold text-xl text-primary">${latestOrder.total.toFixed(2)}</span>
+          <span className="font-bold text-xl text-primary">₹{latestOrder.total.toFixed(2)}</span>
         </CardFooter>
       </Card>
     </div>
