@@ -12,6 +12,7 @@ export interface Product {
   description: string;
   image: string;
   category: 'fruits' | 'vegetables' | 'dairy' | 'grocery';
+  subCategory: string;
   stock: number;
   rating: number;
   data_ai_hint: string;
