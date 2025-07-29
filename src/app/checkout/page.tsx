@@ -12,7 +12,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Separator } from '@/components/ui/separator';
 import Image from 'next/image';
-import { Trash2 } from 'lucide-react';
+import { Trash2, CreditCard, Wallet } from 'lucide-react';
 
 const checkoutSchema = z.object({
   address: z.string().min(10, 'Please enter a valid address'),
@@ -130,13 +130,19 @@ export default function CheckoutPage() {
                                         <FormControl>
                                         <RadioGroupItem value="UPI" />
                                         </FormControl>
-                                        <FormLabel className="font-normal">UPI / Google Pay / PhonePe</FormLabel>
+                                        <FormLabel className="font-normal flex items-center gap-2">
+                                            <CreditCard className="h-5 w-5" />
+                                            <span>UPI / Google Pay</span>
+                                        </FormLabel>
                                     </FormItem>
                                     <FormItem className="flex items-center space-x-3 space-y-0">
                                         <FormControl>
                                         <RadioGroupItem value="COD" />
                                         </FormControl>
-                                        <FormLabel className="font-normal">Cash on Delivery (COD)</FormLabel>
+                                        <FormLabel className="font-normal flex items-center gap-2">
+                                            <Wallet className="h-5 w-5" />
+                                            <span>Cash on Delivery (COD)</span>
+                                        </FormLabel>
                                     </FormItem>
                                     </RadioGroup>
                                 </FormControl>
