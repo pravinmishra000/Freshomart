@@ -16,16 +16,17 @@ import { ProductCard } from '@/components/ProductCard';
 import { CategoryCard } from '@/components/CategoryCard';
 import { categories, products } from '@/lib/data';
 import { Separator } from '@/components/ui/separator';
+import { SuggestionBox } from '@/components/SuggestionBox';
 
 export default function Home() {
   const bestSellers = products.slice(0, 8);
   const discountedProducts = products.filter(p => p.originalPrice && p.originalPrice > p.price);
 
   const banners = [
-    { src: 'https://placehold.co/1200x400', alt: 'Organic Fruits Banner', data_ai_hint: 'organic fruits', tagline: '100% Organic, Fresh from Farms.' },
-    { src: 'https://placehold.co/1200x400', alt: 'Fresh Vegetables Banner', data_ai_hint: 'fresh vegetables', tagline: 'Picked Fresh. Delivered Fast.' },
-    { src: 'https://placehold.co/1200x400', alt: 'Dairy Essentials Banner', data_ai_hint: 'dairy products', tagline: 'Pure. Chilled. Wholesome.' },
-    { src: 'https://placehold.co/1200x400', alt: 'Daily Grocery Banner', data_ai_hint: 'grocery staples', tagline: 'Daily Needs, Daily Delivered.' },
+    { src: 'https://placehold.co/1200x400', alt: 'Organic Fruits Banner', data_ai_hint: 'organic fruits basket', tagline: '100% Organic, Fresh from Farms.' },
+    { src: 'https://placehold.co/1200x400', alt: 'Fresh Vegetables Banner', data_ai_hint: 'fresh vegetables market', tagline: 'Picked Fresh. Delivered Fast.' },
+    { src: 'https://placehold.co/1200x400', alt: 'Dairy Essentials Banner', data_ai_hint: 'dairy products on table', tagline: 'Pure. Chilled. Wholesome.' },
+    { src: 'https://placehold.co/1200x400', alt: 'Daily Grocery Banner', data_ai_hint: 'daily essentials kitchen', tagline: 'Daily Needs, Daily Delivered.' },
   ];
 
   return (
@@ -76,6 +77,10 @@ export default function Home() {
             <Separator />
           </>
       )}
+      
+      <section>
+        <SuggestionBox />
+      </section>
 
       <section>
         <h2 className="text-3xl font-headline font-bold mb-6 text-center">Shop by Category</h2>
