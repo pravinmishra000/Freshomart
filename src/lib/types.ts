@@ -8,6 +8,7 @@ export interface Product {
   id: string;
   name: string;
   price: number;
+  unit: string;
   description: string;
   image: string;
   category: 'fruits' | 'vegetables' | 'dairy' | 'grocery';

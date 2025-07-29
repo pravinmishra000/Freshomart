@@ -55,7 +55,10 @@ export function ProductCard({ product }: ProductCardProps) {
           <CardTitle className="text-lg font-headline font-semibold mb-1 leading-tight h-12">
             {product.name}
           </CardTitle>
-          <p className="text-xl font-bold text-primary">₹{product.price.toFixed(2)}</p>
+          <p className="text-xl font-bold text-primary">
+            ₹{product.price.toFixed(2)}
+            <span className="text-sm font-normal text-muted-foreground">{product.unit}</span>
+          </p>
         </CardContent>
         <CardFooter className="p-4 pt-0">
           <Button 

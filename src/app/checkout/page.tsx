@@ -76,7 +76,7 @@ export default function CheckoutPage() {
                                     <Image src={item.image} alt={item.name} width={64} height={64} className="rounded-md object-cover" data-ai-hint={item.data_ai_hint} />
                                     <div>
                                         <p className="font-semibold">{item.name}</p>
-                                        <p className="text-sm text-muted-foreground">₹{item.price.toFixed(2)} x {item.quantity}</p>
+                                        <p className="text-sm text-muted-foreground">₹{item.price.toFixed(2)}{item.unit} x {item.quantity}</p>
                                     </div>
                                 </div>
                                 <div className='flex items-center gap-2'>
