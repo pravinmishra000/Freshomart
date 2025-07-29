@@ -8,6 +8,7 @@ export interface Product {
   id: string;
   name: string;
   price: number;
+  originalPrice?: number; // The price before discount
   unit: string;
   description: string;
   image: string;
@@ -16,6 +17,8 @@ export interface Product {
   stock: number;
   rating: number;
   data_ai_hint: string;
+  dealEndTime?: string; // ISO string for countdown timer
+  badges?: ('Hot Deal' | 'Limited Stock' | 'Deal of the Day' | 'Best Value' | 'Fresh Pick')[];
 }
 
 export interface Category {

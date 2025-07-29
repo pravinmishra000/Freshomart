@@ -7,11 +7,18 @@ export const categories: Category[] = [
   { id: '4', name: 'Grocery', slug: 'grocery', image: 'https://placehold.co/300x300', data_ai_hint: 'grocery items' },
 ];
 
+const tomorrow = new Date();
+tomorrow.setDate(tomorrow.getDate() + 1);
+tomorrow.setHours(23, 59, 59, 999); // Ends tomorrow at midnight
+
+const inSixHours = new Date();
+inSixHours.setHours(inSixHours.getHours() + 6);
+
 export const products: Product[] = [
   // Fruits
-  { id: 'p1', name: 'Kele (Banana)', price: 40, unit: '/dozen', description: 'Fresh and nutritious bananas.', image: 'https://placehold.co/400x400', category: 'fruits', subCategory: 'Popular Fruits', stock: 150, rating: 4.7, data_ai_hint: 'banana bunch' },
+  { id: 'p1', name: 'Kele (Banana)', price: 35, originalPrice: 45, unit: '/dozen', description: 'Fresh and nutritious bananas.', image: 'https://placehold.co/400x400', category: 'fruits', subCategory: 'Popular Fruits', stock: 150, rating: 4.7, data_ai_hint: 'banana bunch', dealEndTime: inSixHours.toISOString(), badges: ['Deal of the Day', 'Fresh Pick'] },
   { id: 'p2', name: 'Aam (Mango)', price: 80, unit: '/kg', description: 'Sweet and juicy seasonal mangoes.', image: 'https://placehold.co/400x400', category: 'fruits', subCategory: 'Seasonal Fruits', stock: 100, rating: 4.9, data_ai_hint: 'ripe mango' },
-  { id: 'p3', name: 'Seb (Apple)', price: 120, unit: '/kg', description: 'Crisp and delicious red apples.', image: 'https://placehold.co/400x400', category: 'fruits', subCategory: 'Popular Fruits', stock: 100, rating: 4.6, data_ai_hint: 'red apple' },
+  { id: 'p3', name: 'Seb (Apple)', price: 100, originalPrice: 120, unit: '/kg', description: 'Crisp and delicious red apples.', image: 'https://placehold.co/400x400', category: 'fruits', subCategory: 'Popular Fruits', stock: 100, rating: 4.6, data_ai_hint: 'red apple', badges: ['Hot Deal'] },
   { id: 'p4', name: 'Tarbooj (Watermelon)', price: 30, unit: '/kg', description: 'Refreshing and hydrating watermelon.', image: 'https://placehold.co/400x400', category: 'fruits', subCategory: 'Seasonal Fruits', stock: 50, rating: 4.8, data_ai_hint: 'sliced watermelon' },
   { id: 'p5', name: 'Santra (Orange)', price: 60, unit: '/kg', description: 'Tangy and vitamin C rich oranges.', image: 'https://placehold.co/400x400', category: 'fruits', subCategory: 'Popular Fruits', stock: 80, rating: 4.5, data_ai_hint: 'fresh orange' },
   { id: 'p6', name: 'Papita (Papaya)', price: 40, unit: '/kg', description: 'Sweet and healthy papayas.', image: 'https://placehold.co/400x400', category: 'fruits', subCategory: 'Popular Fruits', stock: 70, rating: 4.6, data_ai_hint: 'papaya slice' },
@@ -23,9 +30,9 @@ export const products: Product[] = [
   { id: 'p12', name: 'Chikoo (Sapodilla)', price: 60, unit: '/kg', description: 'Sweet and grainy chikoo.', image: 'https://placehold.co/400x400', category: 'fruits', subCategory: 'Popular Fruits', stock: 50, rating: 4.5, data_ai_hint: 'sapodilla fruit' },
 
   // Vegetables
-  { id: 'v1', name: 'Aloo (Potato)', price: 30, unit: '/kg', description: 'Versatile and essential potatoes.', image: 'https://placehold.co/400x400', category: 'vegetables', subCategory: 'Root Vegetables', stock: 300, rating: 4.5, data_ai_hint: 'fresh potato' },
+  { id: 'v1', name: 'Aloo (Potato)', price: 25, originalPrice: 30, unit: '/kg', description: 'Versatile and essential potatoes.', image: 'https://placehold.co/400x400', category: 'vegetables', subCategory: 'Root Vegetables', stock: 300, rating: 4.5, data_ai_hint: 'fresh potato', dealEndTime: tomorrow.toISOString(), badges: ['Best Value'] },
   { id: 'v2', name: 'Tamatar (Tomato)', price: 40, unit: '/kg', description: 'Juicy and ripe red tomatoes.', image: 'https://placehold.co/400x400', category: 'vegetables', subCategory: 'Leafy Greens', stock: 250, rating: 4.6, data_ai_hint: 'red tomato' },
-  { id: 'v3', name: 'Pyaaz (Onion)', price: 35, unit: '/kg', description: 'Essential for every Indian kitchen.', image: 'https://placehold.co/400x400', category: 'vegetables', subCategory: 'Root Vegetables', stock: 400, rating: 4.4, data_ai_hint: 'red onion' },
+  { id: 'v3', name: 'Pyaaz (Onion)', price: 20, originalPrice: 35, unit: '/kg', description: 'Essential for every Indian kitchen.', image: 'https://placehold.co/400x400', category: 'vegetables', subCategory: 'Root Vegetables', stock: 400, rating: 4.4, data_ai_hint: 'red onion', badges: ['Hot Deal', 'Limited Stock'] },
   { id: 'v4', name: 'Baingan (Brinjal)', price: 40, unit: '/kg', description: 'Fresh and glossy brinjals.', image: 'https://placehold.co/400x400', category: 'vegetables', subCategory: 'Gourds', stock: 100, rating: 4.3, data_ai_hint: 'fresh eggplant' },
   { id: 'v5', name: 'Bhindi (Okra)', price: 50, unit: '/kg', description: 'Tender and fresh ladyfingers.', image: 'https://placehold.co/400x400', category: 'vegetables', subCategory: 'Leafy Greens', stock: 120, rating: 4.7, data_ai_hint: 'fresh okra' },
   { id: 'v6', name: 'Phool Gobi (Cauliflower)', price: 30, unit: '/piece', description: 'A fresh head of cauliflower.', image: 'https://placehold.co/400x400', category: 'vegetables', subCategory: 'Cruciferous', stock: 80, rating: 4.5, data_ai_hint: 'cauliflower head' },
@@ -40,9 +47,9 @@ export const products: Product[] = [
   { id: 'v15', name: 'Kheera (Cucumber)', price: 30, unit: '/kg', description: 'Cool and crisp cucumbers.', image: 'https://placehold.co/400x400', category: 'vegetables', subCategory: 'Gourds', stock: 150, rating: 4.5, data_ai_hint: 'fresh cucumber' },
 
   // Dairy
-  { id: 'd1', name: 'Doodh (Milk)', price: 50, unit: '/litre', description: 'Fresh and pure cow milk.', image: 'https://placehold.co/400x400', category: 'dairy', subCategory: 'Milk Products', stock: 100, rating: 4.8, data_ai_hint: 'milk bottle' },
+  { id: 'd1', name: 'Doodh (Milk)', price: 52, originalPrice: 58, unit: '/litre', description: 'Fresh and pure cow milk.', image: 'https://placehold.co/400x400', category: 'dairy', subCategory: 'Milk Products', stock: 100, rating: 4.8, data_ai_hint: 'milk bottle', dealEndTime: tomorrow.toISOString(), badges: ['Best Value'] },
   { id: 'd2', name: 'Dahi (Curd)', price: 30, unit: '/500g', description: 'Thick and creamy curd.', image: 'https://placehold.co/400x400', category: 'dairy', subCategory: 'Milk Products', stock: 80, rating: 4.7, data_ai_hint: 'curd bowl' },
-  { id: 'd3', name: 'Paneer', price: 100, unit: '/200g', description: 'Fresh and soft cottage cheese.', image: 'https://placehold.co/400x400', category: 'dairy', subCategory: 'Milk Products', stock: 60, rating: 4.9, data_ai_hint: 'paneer cubes' },
+  { id: 'd3', name: 'Paneer', price: 90, originalPrice: 100, unit: '/200g', description: 'Fresh and soft cottage cheese.', image: 'https://placehold.co/400x400', category: 'dairy', subCategory: 'Milk Products', stock: 60, rating: 4.9, data_ai_hint: 'paneer cubes', badges: ['Hot Deal'] },
   { id: 'd4', name: 'Makhan (Butter)', price: 50, unit: '/100g', description: 'Creamy and delicious butter.', image: 'https://placehold.co/400x400', category: 'dairy', subCategory: 'Milk Products', stock: 70, rating: 4.8, data_ai_hint: 'butter stick' },
   { id: 'd5', name: 'Ghee', price: 250, unit: '/500g', description: 'Pure and aromatic desi ghee.', image: 'https://placehold.co/400x400', category: 'dairy', subCategory: 'Milk Products', stock: 50, rating: 4.9, data_ai_hint: 'ghee jar' },
   { id: 'd6', name: 'Cheese Slices', price: 70, unit: '/100g', description: 'Pack of processed cheese slices.', image: 'https://placehold.co/400x400', category: 'dairy', subCategory: 'Cheese', stock: 40, rating: 4.6, data_ai_hint: 'cheese slices' },
@@ -56,7 +63,7 @@ export const products: Product[] = [
   // Grocery
   { id: 'g1', name: 'Basmati Chawal (Rice)', price: 120, unit: '/kg', description: 'Long-grain and aromatic Basmati rice.', image: 'https://placehold.co/400x400', category: 'grocery', subCategory: 'Staples', stock: 200, rating: 4.8, data_ai_hint: 'rice bowl' },
   { id: 'g2', name: 'Sona Masoori Chawal (Rice)', price: 80, unit: '/kg', description: 'Medium-grain Sona Masoori rice.', image: 'https://placehold.co/400x400', category: 'grocery', subCategory: 'Staples', stock: 250, rating: 4.7, data_ai_hint: 'rice bag' },
-  { id: 'g3', name: 'Atta (Wheat Flour)', price: 40, unit: '/kg', description: 'Whole wheat flour for chapatis.', image: 'https://placehold.co/400x400', category: 'grocery', subCategory: 'Staples', stock: 300, rating: 4.6, data_ai_hint: 'wheat flour' },
+  { id: 'g3', name: 'Atta (Wheat Flour)', price: 38, originalPrice: 42, unit: '/kg', description: 'Whole wheat flour for chapatis.', image: 'https://placehold.co/400x400', category: 'grocery', subCategory: 'Staples', stock: 300, rating: 4.6, data_ai_hint: 'wheat flour', badges: ['Best Value'] },
   { id: 'g4', name: 'Sarson Tel (Mustard Oil)', price: 150, unit: '/litre', description: 'Pure and pungent mustard oil.', image: 'https://placehold.co/400x400', category: 'grocery', subCategory: 'Oils', stock: 100, rating: 4.7, data_ai_hint: 'oil bottle' },
   { id: 'g5', name: 'Refined Oil', price: 130, unit: '/litre', description: 'Refined sunflower oil for cooking.', image: 'https://placehold.co/400x400', category: 'grocery', subCategory: 'Oils', stock: 150, rating: 4.5, data_ai_hint: 'cooking oil' },
   { id: 'g6', name: 'Cheeni (Sugar)', price: 45, unit: '/kg', description: 'Refined white sugar.', image: 'https://placehold.co/400x400', category: 'grocery', subCategory: 'Staples', stock: 400, rating: 4.4, data_ai_hint: 'sugar cubes' },
@@ -70,10 +77,10 @@ export const products: Product[] = [
   { id: 'g14', name: 'Jeera (Cumin Seeds)', price: 30, unit: '/100g', description: 'Aromatic cumin seeds.', image: 'https://placehold.co/400x400', category: 'grocery', subCategory: 'Spices', stock: 250, rating: 4.8, data_ai_hint: 'cumin seeds' },
   { id: 'g15', name: 'Dhania Powder (Coriander)', price: 22, unit: '/100g', description: 'Fragrant coriander powder.', image: 'https://placehold.co/400x400', category: 'grocery', subCategory: 'Spices', stock: 270, rating: 4.6, data_ai_hint: 'coriander powder' },
   { id: 'g16', name: 'Parle-G Biscuits', price: 10, unit: '/pack', description: 'Classic Parle-G biscuits.', image: 'https://placehold.co/400x400', category: 'grocery', subCategory: 'Snacks', stock: 500, rating: 4.9, data_ai_hint: 'biscuit pack' },
-  { id: 'g17', name: 'Bhujia Namkeen', price: 40, unit: '/200g', description: 'Spicy and crispy bhujia.', image: 'https://placehold.co/400x400', category: 'grocery', subCategory: 'Snacks', stock: 200, rating: 4.7, data_ai_hint: 'namkeen snack' },
+  { id: 'g17', name: 'Bhujia Namkeen', price: 35, originalPrice: 40, unit: '/200g', description: 'Spicy and crispy bhujia.', image: 'https://placehold.co/400x400', category: 'grocery', subCategory: 'Snacks', stock: 200, rating: 4.7, data_ai_hint: 'namkeen snack', dealEndTime: inSixHours.toISOString() },
   { id: 'g18', name: 'Tata Tea Gold', price: 150, unit: '/250g', description: 'Rich and aromatic tea leaves.', image: 'https://placehold.co/400x400', category: 'grocery', subCategory: 'Beverages', stock: 100, rating: 4.8, data_ai_hint: 'tea packet' },
   { id: 'g19', name: 'Nescafe Coffee', price: 100, unit: '/50g', description: 'Instant coffee powder.', image: 'https://placehold.co/400x400', category: 'grocery', subCategory: 'Beverages', stock: 120, rating: 4.7, data_ai_hint: 'coffee jar' },
-  { id: 'g20', name: 'Maggi Noodles', price: 12, unit: '/pack', description: '2-minute instant noodles.', image: 'https://placehold.co/400x400', category: 'grocery', subCategory: 'Snacks', stock: 400, rating: 4.9, data_ai_hint: 'instant noodles' },
+  { id: 'g20', name: 'Maggi Noodles', price: 10, originalPrice: 12, unit: '/pack', description: '2-minute instant noodles.', image: 'https://placehold.co/400x400', category: 'grocery', subCategory: 'Snacks', stock: 400, rating: 4.9, data_ai_hint: 'instant noodles', dealEndTime: tomorrow.toISOString(), badges: ['Limited Stock'] },
   { id: 'g21', name: 'Seviyan (Vermicelli)', price: 30, unit: '/200g', description: 'Roasted vermicelli for upma or kheer.', image: 'https://placehold.co/400x400', category: 'grocery', subCategory: 'Staples', stock: 150, rating: 4.5, data_ai_hint: 'vermicelli pasta' },
   { id: 'g22', name: 'Sooji (Semolina)', price: 40, unit: '/500g', description: 'Coarse semolina for upma and halwa.', image: 'https://placehold.co/400x400', category: 'grocery', subCategory: 'Staples', stock: 180, rating: 4.6, data_ai_hint: 'semolina flour' },
   { id: 'g23', name: 'Poha (Flattened Rice)', price: 35, unit: '/500g', description: 'Medium thickness poha.', image: 'https://placehold.co/400x400', category: 'grocery', subCategory: 'Staples', stock: 200, rating: 4.7, data_ai_hint: 'flattened rice' },

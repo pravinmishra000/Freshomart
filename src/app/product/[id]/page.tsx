@@ -23,6 +23,8 @@ export default function ProductDetailPage() {
   if (!product) {
     return <div className="text-center">Product not found.</div>;
   }
+  
+  const isDiscounted = product.originalPrice && product.originalPrice > product.price;
 
   const handleQuantityChange = (amount: number) => {
     setQuantity((prev) => Math.max(1, prev + amount));
@@ -56,8 +58,15 @@ export default function ProductDetailPage() {
             <span className="text-muted-foreground">({product.rating.toFixed(1)})</span>
           </div>
           <p className="text-lg text-muted-foreground">{product.description}</p>
-          <div className="text-4xl font-bold text-primary">
-            ₹{product.price.toFixed(2)}
+          <div className="flex items-baseline gap-2">
+            <span className="text-4xl font-bold text-primary">
+              ₹{product.price.toFixed(2)}
+            </span>
+            {isDiscounted && (
+                 <span className="text-2xl font-medium text-muted-foreground line-through">
+                    ₹{product.originalPrice?.toFixed(2)}
+                </span>
+            )}
             <span className="text-base font-normal text-muted-foreground">{product.unit}</span>
           </div>
           <Separator />

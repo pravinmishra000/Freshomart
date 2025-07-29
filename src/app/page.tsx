@@ -19,6 +19,7 @@ import { Separator } from '@/components/ui/separator';
 
 export default function Home() {
   const bestSellers = products.slice(0, 8);
+  const discountedProducts = products.filter(p => p.originalPrice && p.originalPrice > p.price);
 
   const banners = [
     { src: 'https://placehold.co/1200x400', alt: 'Fresh Vegetables Banner', data_ai_hint: 'vegetables groceries' },
@@ -57,6 +58,20 @@ export default function Home() {
           <CarouselNext className="absolute right-4" />
         </Carousel>
       </section>
+
+      {discountedProducts.length > 0 && (
+          <>
+            <section>
+              <h2 className="text-3xl font-headline font-bold mb-6 text-center">💥 Deals & Discounts</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {discountedProducts.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </div>
+            </section>
+            <Separator />
+          </>
+      )}
 
       <section>
         <h2 className="text-3xl font-headline font-bold mb-6 text-center">Shop by Category</h2>
