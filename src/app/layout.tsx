@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { AppProvider } from '@/context/AppContext';
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
+import { BottomNav } from '@/components/BottomNav';
 
 export const metadata: Metadata = {
   title: 'Freshomart - Tazgi Ghar Tak',
@@ -28,8 +28,8 @@ export default function RootLayout({
         <AppProvider>
           <div className="relative flex min-h-dvh flex-col bg-background">
             <Header />
-            <main className="flex-1 container mx-auto px-4 py-8">{children}</main>
-            <Footer />
+            <main className="flex-1 container mx-auto px-4 py-8 pb-24">{children}</main>
+            <BottomNav />
           </div>
           <Toaster />
         </AppProvider>
