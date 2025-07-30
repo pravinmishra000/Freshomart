@@ -9,7 +9,9 @@ import {
   Sheet,
   SheetContent,
   SheetTrigger,
-  SheetClose
+  SheetClose,
+  SheetTitle,
+  SheetHeader,
 } from "@/components/ui/sheet"
 import { Separator } from './ui/separator';
 
@@ -52,26 +54,28 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="left">
-               <div className="p-4">
-                  <Link href="/" className="mr-6 flex items-center space-x-2 mb-4">
-                    <ShoppingCart className="h-6 w-6 text-primary" />
-                     <div className="flex flex-col">
-                      <span className="font-bold font-headline text-lg">Freshomart</span>
-                      <span className="text-xs text-muted-foreground -mt-1">Tazgi Ghar Tak</span>
-                    </div>
-                  </Link>
+               <SheetHeader className="p-4 text-left">
+                  <SheetTitle asChild>
+                     <Link href="/" className="mr-6 flex items-center space-x-2 mb-4">
+                      <ShoppingCart className="h-6 w-6 text-primary" />
+                       <div className="flex flex-col">
+                        <span className="font-bold font-headline text-lg">Freshomart</span>
+                        <span className="text-xs text-muted-foreground -mt-1">Tazgi Ghar Tak</span>
+                      </div>
+                    </Link>
+                  </SheetTitle>
                   <Separator />
-                  <nav className="flex flex-col space-y-4 mt-4">
-                     {navLinks.map(link => (
-                      <SheetClose asChild key={link.href}>
+               </SheetHeader>
+                <nav className="flex flex-col space-y-4 px-4">
+                    {navLinks.map(link => (
+                    <SheetClose asChild key={link.href}>
                         <Link href={link.href} className="flex items-center space-x-2 p-2 rounded-md hover:bg-muted">
                            {link.icon && <link.icon className="h-5 w-5" />}
                            <span>{link.label}</span>
                         </Link>
-                      </SheetClose>
+                    </SheetClose>
                     ))}
-                  </nav>
-               </div>
+                </nav>
             </SheetContent>
           </Sheet>
         </div>
