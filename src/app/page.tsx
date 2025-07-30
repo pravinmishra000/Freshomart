@@ -20,7 +20,7 @@ import { Input } from '@/components/ui/input';
 import { Mic, Search } from 'lucide-react';
 
 export default function Home() {
-  const bestSellers = products.slice(0, 8);
+  const bestSellers = products.sort((a, b) => b.rating - a.rating).slice(0, 10);
   const discountedProducts = products.filter(p => p.originalPrice && p.originalPrice > p.price);
 
   const banners = [

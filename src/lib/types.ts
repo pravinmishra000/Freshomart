@@ -12,7 +12,7 @@ export interface Product {
   unit: string;
   description: string;
   image: string;
-  category: 'fruits' | 'vegetables' | 'dairy' | 'grocery';
+  category: 'fruits' | 'vegetables' | 'dairy' | 'grocery' | 'beverages' | 'cleaning';
   subCategory: string;
   stock: number;
   rating: number;
@@ -25,7 +25,7 @@ export interface Category {
   id: string;
   name: string;
   image: string;
-  slug: 'fruits' | 'vegetables' | 'dairy' | 'grocery';
+  slug: 'fruits' | 'vegetables' | 'dairy' | 'grocery' | 'beverages' | 'cleaning';
   data_ai_hint: string;
 }
 
