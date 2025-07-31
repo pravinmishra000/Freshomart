@@ -43,7 +43,7 @@ export function Header() {
             <ShoppingCart className="h-6 w-6 text-primary" />
             <div className="flex flex-col">
               <span className="font-headline text-2xl text-accent">Freshomart</span>
-              <span className="text-xs text-primary font-bold -mt-1">Fresh & Fast</span>
+              <span className="text-xs text-primary font-bold -mt-1 uppercase">Fresh & Fast</span>
             </div>
           </Link>
         </div>
