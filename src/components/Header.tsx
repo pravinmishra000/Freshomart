@@ -42,8 +42,8 @@ export function Header() {
            <Link href="/" className="flex items-center space-x-2">
             <ShoppingCart className="h-6 w-6 text-primary" />
             <div className="flex flex-col">
-              <span className="font-bold font-headline text-xl uppercase">FRESHOMART</span>
-              <span className="text-xs text-muted-foreground -mt-1">Fresh & Fast</span>
+              <span className="font-headline text-2xl text-accent">Freshomart</span>
+              <span className="text-xs text-primary font-bold -mt-1">Fresh & Fast</span>
             </div>
           </Link>
         </div>
