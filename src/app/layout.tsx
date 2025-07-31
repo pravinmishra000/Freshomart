@@ -28,7 +28,7 @@ export default function RootLayout({
         <AppProvider>
           <div className="relative flex min-h-dvh flex-col bg-background">
             <Header />
-            <main className="flex-1 container mx-auto px-4 py-8 pb-24">{children}</main>
+            <main className="flex-1 container mx-auto px-4 py-4 md:py-8 pb-24">{children}</main>
             <BottomNav />
           </div>
           <Toaster />

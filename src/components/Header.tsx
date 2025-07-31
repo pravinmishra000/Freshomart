@@ -24,30 +24,28 @@ export function Header() {
 
   const isHomePage = pathname === '/';
 
-  const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/tracking', label: 'My Orders', icon: Package },
-    { href: '/profile', label: 'Profile', icon: UserIcon },
-  ];
-
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:hidden">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
-        {!isHomePage && (
-           <Button variant="ghost" size="icon" className="mr-2" onClick={() => router.back()}>
-             <ChevronLeft className="h-6 w-6" />
-           </Button>
-        )}
-        <div className="flex-1">
+        <div className="md:hidden">
+          {!isHomePage && (
+             <Button variant="ghost" size="icon" className="mr-2" onClick={() => router.back()}>
+               <ChevronLeft className="h-6 w-6" />
+             </Button>
+          )}
+        </div>
+        
+        <div className="flex-1 flex justify-center md:justify-start">
            <Link href="/" className="flex items-center space-x-2">
             <ShoppingCart className="h-6 w-6 text-primary" />
             <div className="flex flex-col">
               <span className="font-headline text-2xl text-accent">Freshomart</span>
-              <span className="text-xs text-primary font-bold -mt-1 uppercase">Fresh & Fast</span>
+              <span className="text-xs text-primary font-bold -mt-1 uppercase">Fresh &amp; Fast</span>
             </div>
           </Link>
         </div>
-        <div className="flex items-center space-x-2">
+
+        <div className="flex items-center space-x-2 md:hidden">
            <Link href="/checkout">
               <Button variant="ghost" size="icon" aria-label="Cart">
                 <ShoppingCart className="h-5 w-5" />

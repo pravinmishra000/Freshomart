@@ -53,7 +53,7 @@ export default function Home() {
 
   return (
     <div className="space-y-8">
-       <div className="sticky top-16 -mx-4 -mt-8 bg-background/80 backdrop-blur-lg z-20 p-4">
+       <div className="sticky top-16 md:top-0 -mx-4 -mt-4 md:-mt-8 bg-background/80 backdrop-blur-lg z-20 p-4">
         <div className="relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
           <Input 
